@@ -28,18 +28,21 @@ for(let i=0 ; i < imgList.length; i++){
     div.style.height = '500px';
     div.append(imgList[i]);
     cont.append(div);
-    div.classList.add(".item-container item");
+    
     div.classList.add("img");
-   
-    console.log(imgList[i])
+    div.classList.add(".item");
+      imgList[0] = div.classList.add(".active");  
+     
+    console.log(imgList[i]);
 
     
-// Creiamo 
+// Creiamo l'evento che permetterà di mandare avanti le immagini
     btnDown = document.addEventListener("click",
     function(event){
-         div.classList.remove("item-container item");
-         div.classList.add("active");
-         div.append(imgList[0]);
+        for(let i=0 ; i < imgList.length; i++){
+
+        }
+        
         
 
     }
