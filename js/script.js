@@ -19,10 +19,17 @@ imgList[4].src = 'img/05.webp';
 
 //Creiamo il ciclo
 
-for(let i=0 ; i<imgList.length; i++){
+for(let i=0 ; i < imgList.length; i++){
     let cont = document.getElementById("items-container");
     let div = document.createElement("div");
     div.classList.add("item");
+    div.style.width = '800px';
+    div.style.height = '500px';
     div.append(imgList[i]);
     cont.append(div);
+    div.classList.add("item-container item")
+    div.classList.add("img");
+   
+    console.log(imgList[i])
+
 }
