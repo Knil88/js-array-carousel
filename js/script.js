@@ -22,7 +22,7 @@ imgList[4].src = 'img/05.webp';
 for(let i=0 ; i<imgList.length; i++){
     let cont = document.getElementById("items-container");
     let div = document.createElement("div");
-    div.classList.add("img");
+    div.classList.add("item");
     div.append(imgList[i]);
-    cont.append("div");
+    cont.append(div);
 }
