@@ -1,7 +1,7 @@
 // creiamo la lista in cui immetteremo le nostre immagini
 let imgList = new Array();
-let btnUp = document.getElementById("up");
-let btnDown = document.getElementById("down");
+const btnUp = document.querySelector("#up");
+const btnDown = document.querySelector("#down");
 
 imgList[0] = new Image();
 imgList[0].src = 'img/01.webp';
@@ -18,34 +18,80 @@ imgList[3].src = 'img/04.webp';
 imgList[4] = new Image();
 imgList[4].src = 'img/05.webp';
 
+
+
 //Creiamo il ciclo
 
 for(let i=0 ; i < imgList.length; i++){
+    
     let cont = document.getElementById("items-container");
     let div = document.createElement("div");
-    div.classList.add("item");
+    
     div.style.width = '800px';
     div.style.height = '500px';
     div.append(imgList[i]);
     cont.append(div);
     
     div.classList.add("img");
-    div.classList.add(".item");
-      imgList[0] = div.classList.add(".active");  
+    div.classList.add("item");
+
+   
+    
+      
+      
      
     console.log(imgList[i]);
 
-    
-// Creiamo l'evento che permetterà di mandare avanti le immagini
-    btnDown = document.addEventListener("click",
-    function(event){
-        for(let i=0 ; i < imgList.length; i++){
 
+    
+
+
+}
+
+const divArray = document.getElementsByClassName("img");
+divArray[0].classList.add("active");
+let activeItem = 0 ; 
+
+// Creiamo evento bottone 
+
+btnDown.addEventListener("click",
+    function(){
+        if(activeItem  < divArray.length - 1) {
+            divArray[activeItem].classList.remove("active");
+            activeItem++;
+            divArray[activeItem].classList.add("active");
+
+        }
+        else if(activeItem === divArray.length - 1 ){
+            btnDown.classList.add("item");
+            btnUp.classList.add("active");
+            
+            
+            
         }
         
         
-
     }
-    ) 
+)
 
-}
+
+btnUp.addEventListener("click",
+    function(){
+        if(activeItem > 0) {
+            divArray[activeItem].classList.remove("active");
+            activeItem--;
+            divArray[activeItem].classList.add("active");
+            
+
+        }
+        else if(activeItem == divArray.length + 1 ){
+            btnUp.classList.add("item");
+            btnDown.classList.add("active");
+            
+
+            
+        }
+        
+        
+    }
+)
