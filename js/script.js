@@ -29,7 +29,7 @@ for(let i=0 ; i < imgList.length; i++){
     
     //Settiamo le dimensioni delle immagini
 
-    div.style.width = '800px';
+    div.style.width = '1000px';
     div.style.height = '500px';
 
     //Appendiamo dentro il div la lista immagini
@@ -62,7 +62,7 @@ divArray[0].classList.add("active");
 
 let activeItem = 0 ; 
 
-// Creiamo evento bottone 
+// Creiamo evento bottone  btnDown
 
 btnDown.addEventListener("click",
     function(){
@@ -81,7 +81,7 @@ btnDown.addEventListener("click",
             activeItem++;
 
             //Cosi il div successivo gli viene aggiunta la classe active in modo che l'immagine possa apparire
-            
+
             divArray[activeItem].classList.add("active");
 
         }
